@@ -29,6 +29,7 @@
     <ClCompile Include="src\CTexture.cpp" />
     <ClCompile Include="src\CInput.cpp" />
     <ClCompile Include="src\CUi.cpp" />
+    <ClCompile Include="src\CVector.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -52,6 +53,7 @@
     <ClInclude Include="src\CInput.h" />
     <ClInclude Include="src\CUi.h" />
     <ClInclude Include="src\main.h" />
+    <ClInclude Include="src\CVector.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{8802AF2F-2920-4700-89F2-CA6778727283}</ProjectGuid>
