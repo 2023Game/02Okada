@@ -54,7 +54,7 @@ void CApplication::Update()
 	}
 	if (mInput.Key('K'))
 	{
-		mEye = mEye + CVector(0.0f, 0.1f, 0.0f);
+		mEye = mEye + CVector(0.0f, 0.0f, 0.1f);
 	}
 	if (mInput.Key('O'))
 	{
@@ -62,7 +62,7 @@ void CApplication::Update()
 	}
 	if (mInput.Key('M'))
 	{
-		mEye = mEye + CVector(0.0f, 0.0f, 0.1f);
+		mEye = mEye + CVector(0.0f, 0.1f, 0.0f);
 	}
 
 
