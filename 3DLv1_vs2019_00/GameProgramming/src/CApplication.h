@@ -11,6 +11,7 @@
 #include <vector>
 #include "CCharacterManager.h"
 #include"CVector.h"
+#include"CModel.h"
 
 #include "CGame.h"
 #include "CSound.h"
@@ -39,6 +40,8 @@ private:
 	CFont mFont;
 	CMiss* mpMiss;
 	CVector mEye;
+	//モデルクラスのインスタンス作成
+	CModel mModel;
 	//CCharacterのポインタの可変長配列
 //	std::vector<CCharacter*> mCharacters;
 public:
