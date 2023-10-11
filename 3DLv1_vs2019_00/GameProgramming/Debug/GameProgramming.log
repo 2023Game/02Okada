@@ -1,9 +1,2 @@
-﻿  CModel.cpp
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CModel.cpp(90,61): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CModel.cpp(90,47): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CModel.cpp(90,33): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CModel.cpp(112,61): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CModel.cpp(112,47): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CModel.cpp(112,33): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CModel.cpp(126,20): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
+﻿  CTriangle.cpp
   GameProgramming.vcxproj -> C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\Debug\GameProgramming.exe

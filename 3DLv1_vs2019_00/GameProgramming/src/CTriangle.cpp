@@ -15,6 +15,11 @@ void CTriangle::Normal(const CVector& v0, const CVector& v1, const CVector& v2) 
 	mN[2] = v2;
 }
 
+void CTriangle::Normal(const CVector& n)
+{
+	mN[0] = mN[1] = mN[2] = n;
+}
+
 //•`‰æ
 void CTriangle::Render() {
 	glBegin(GL_TRIANGLES);
@@ -25,4 +30,13 @@ void CTriangle::Render() {
 	glNormal3f(mN[2].X(), mN[2].Y(), mN[2].Z());
 	glVertex3f(mV[2].X(), mV[2].Y(), mV[2].Z());
 	glEnd();
+}
+
+int CTriangle:: MaterialIdx()
+{
+	return mMaterialIdx;
+}
+void CTriangle::MaterialIdx(int idx)
+{
+	mMaterialIdx = 0;
 }
