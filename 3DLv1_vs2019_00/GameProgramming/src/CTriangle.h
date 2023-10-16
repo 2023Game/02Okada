@@ -5,7 +5,8 @@
 /*
 三角形クラス
 */
-class CTriangle {
+class CTriangle 
+{
 public:
 	//UV設定
 	void UV(const CVector& v0, const CVector& v1, const CVector& v2);
