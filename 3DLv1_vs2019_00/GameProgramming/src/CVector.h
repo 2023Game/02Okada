@@ -1,3 +1,4 @@
+#include"CMatrix.h"
 #ifndef CVECTOR_H
 #define CVECTOR_H
 /*
@@ -6,6 +7,9 @@
 */
 class CVector {
 public:
+
+	//CVector * CMatrixの結果をCVectorで返す
+	CVector operator*(const CMatrix& m);
 	//-演算子のオーバーロード
 	//CVector - CVector の演算結果を返す
 	CVector operator-(const CVector& v) const;
@@ -29,5 +33,6 @@ public:
 private:
 	//3D各軸での値を設定
 	float mX, mY, mZ;
+
 };
 #endif
