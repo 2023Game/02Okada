@@ -12,13 +12,15 @@
 #include "CCharacterManager.h"
 #include"CVector.h"
 #include"CModel.h"
-
+#include"CCharacter3.h"
 #include "CGame.h"
 #include "CSound.h"
 
 class CApplication
 {
 private:
+	CCharacter3 mPlayer;
+	CCharacter3 mCharacter;
 	CModel mBackGround; //背景モデル
 	CSound mSoundBgm;	//BGM
 	CSound mSoundOver;	//ゲームオーバー
