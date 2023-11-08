@@ -82,7 +82,7 @@ void CMaterial::Disabled()
 
 void CMaterial::VertexNum(int num)
 {
-	mVertexNum;
+	mVertexNum = num;
 }
 
 int CMaterial::VertexNum()
