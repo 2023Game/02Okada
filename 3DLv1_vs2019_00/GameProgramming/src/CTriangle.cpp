@@ -81,3 +81,43 @@ void CTriangle::Render(const CMatrix& m)
 	glEnd();
 }
 
+const CVector& CTriangle::V0() const //mV[0]‚ð•Ô‚µ‚Ü‚·
+{
+	return mV[0];
+}
+const CVector& CTriangle::V1() const //mV[1]‚ð•Ô‚µ‚Ü‚·
+{
+	return mV[1];
+}
+const CVector& CTriangle::V2() const //mV[2]‚ð•Ô‚µ‚Ü‚·
+{
+	return mV[2];
+}
+	
+const CVector& CTriangle::N0() const //mN[0]‚ð•Ô‚µ‚Ü‚·
+{
+	return mN[0];
+}
+const CVector& CTriangle::N1() const //mN[1]‚ð•Ô‚µ‚Ü‚·
+{
+	return mN[1];
+}
+const CVector& CTriangle::N2() const //mN[2]‚ð•Ô‚µ‚Ü‚·
+{
+	return mN[2];
+}
+	
+const CVector& CTriangle::U0() const //mUv[0]‚ð•Ô‚µ‚Ü‚·
+{
+	return mUv[0];
+}
+const CVector& CTriangle::U1() const //mUv[1]‚ð•Ô‚µ‚Ü‚·
+{
+	return mUv[1];
+}
+const CVector& CTriangle::U2() const //mUv[2]‚ð•Ô‚µ‚Ü‚·
+{
+	return mUv[2];
+}
+
+	

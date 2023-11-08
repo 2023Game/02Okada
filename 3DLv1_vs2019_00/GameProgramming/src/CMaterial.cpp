@@ -21,7 +21,9 @@ char* strncpy(char* str1, const char* str2, int len)
 	return str1; //コピー先の先頭アドレスを返却
 }
 //デフォルトコンストラクタ
-CMaterial::CMaterial() {
+CMaterial::CMaterial() 
+	:mVertexNum(0)
+{
 	//名前を0で埋め
 	memset(mName, 0, sizeof(mName));
 	//0で埋める
@@ -76,6 +78,16 @@ void CMaterial::Disabled()
 		//テクスチャを無効にする
 		glDisable(GL_TEXTURE_2D);
 	}
+}
+
+void CMaterial::VertexNum(int num)
+{
+	mVertexNum;
+}
+
+int CMaterial::VertexNum()
+{
+	return mVertexNum;
 }
 
 CTexture* CMaterial::Texture()
