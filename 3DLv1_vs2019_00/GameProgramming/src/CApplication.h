@@ -20,7 +20,6 @@ class CApplication
 {
 private:
 	CPlayer mPlayer;
-	CCharacter3 mCharacter;
 	CModel mBackGround; //背景モデル
 	CSound mSoundBgm;	//BGM
 	CSound mSoundOver;	//ゲームオーバー
