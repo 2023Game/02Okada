@@ -100,6 +100,9 @@ void CApplication::Update()
 		gluLookAt(e.X(), e.Y(), e.Z(), c.X(), c.Y(), c.Z(), u.X(), u.Y(), u.Z());
 
 	mPlayer.Render();
+	mPlayer.bullet.Update();
+	mPlayer.bullet.Render();
+
 
 
 
