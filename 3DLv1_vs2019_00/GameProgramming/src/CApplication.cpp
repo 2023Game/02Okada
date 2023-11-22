@@ -86,26 +86,35 @@ void CApplication::Update()
 
 
 
-	
+
 	mPlayer.Update();
 	//カメラのパラメータを作成する
 	CVector e, c, u;//視点、注視点、上方向
 	//視点を求める
-	e = mPlayer.Position()+ CVector(0.0f, 1.0f, -3.0f) * mPlayer.MatrixRotate();
+	e = mPlayer.Position() + CVector(0.0f, 1.0f, -3.0f) * mPlayer.MatrixRotate();
 	//注視点を求める
 	c = mPlayer.Position();
 	//上方向を求める
-	u =CVector(0.0f, 1.0f, 0.0f) * mPlayer.MatrixRotate();
-		//カメラの設定
-		gluLookAt(e.X(), e.Y(), e.Z(), c.X(), c.Y(), c.Z(), u.X(), u.Y(), u.Z());
+	u = CVector(0.0f, 1.0f, 0.0f) * mPlayer.MatrixRotate();
+	//カメラの設定
+	gluLookAt(e.X(), e.Y(), e.Z(), c.X(), c.Y(), c.Z(), u.X(), u.Y(), u.Z());
 
 	mPlayer.Render();
-	mPlayer.bullet.Update();
-	mPlayer.bullet.Render();
+	// タスクマネージャの更新
+	mTaskManager.Update();
+	//タスクマネージャの描画
+	mTaskManager.Render();
+
 
 
 
 
 	mBackGround.Render();
-
 }
+
+
+	CTaskManager CApplication::mTaskManager;
+	CTaskManager* CApplication::TaskManager()
+	{
+		return &mTaskManager;
+	}
