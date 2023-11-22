@@ -12,6 +12,7 @@
 class CBullet : public CCharacter3 
 {
 public:
+	CBullet();
 	//幅と奥行きの設定
 	//Set(幅, 奥行)
 	void Set(float w, float d);
@@ -20,6 +21,8 @@ public:
 	//描画
 	void Render();
 private:
+	//生存時間
+	int mLife;
 	//三角形
 	CTriangle mT;
 };
