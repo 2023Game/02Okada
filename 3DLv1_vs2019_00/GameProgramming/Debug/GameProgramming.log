@@ -1,14 +1,37 @@
 ﻿  CApplication.cpp
+C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CTaskManager.h(32,14): error C2535: 'CTaskManager::CTaskManager(void)': メンバー関数は、既に定義または宣言されています。
+C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CTaskManager.h(29): message : 'CTaskManager::CTaskManager' の宣言を確認してください
   CBullet.cpp
   CCharacter3.cpp
+C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CTaskManager.h(32,14): error C2535: 'CTaskManager::CTaskManager(void)': メンバー関数は、既に定義または宣言されています。
+C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CTaskManager.h(29): message : 'CTaskManager::CTaskManager' の宣言を確認してください
+  CCollider.cpp
+C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CTaskManager.h(32,14): error C2535: 'CTaskManager::CTaskManager(void)': メンバー関数は、既に定義または宣言されています。
+C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CTaskManager.h(29): message : 'CTaskManager::CTaskManager' の宣言を確認してください
+  CCollisionManager.cpp
+C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CTaskManager.h(32,14): error C2535: 'CTaskManager::CTaskManager(void)': メンバー関数は、既に定義または宣言されています。
+C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CTaskManager.h(29): message : 'CTaskManager::CTaskManager' の宣言を確認してください
+  CEnemy.cpp
   CEnemy2.cpp
+C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CTaskManager.h(32,14): error C2535: 'CTaskManager::CTaskManager(void)': メンバー関数は、既に定義または宣言されています。
+C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CTaskManager.h(29): message : 'CTaskManager::CTaskManager' の宣言を確認してください
   CGame.cpp
+C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CTaskManager.h(32,14): error C2535: 'CTaskManager::CTaskManager(void)': メンバー関数は、既に定義または宣言されています。
+C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CTaskManager.h(29): message : 'CTaskManager::CTaskManager' の宣言を確認してください
   CPlayer.cpp
+C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CTaskManager.h(32,14): error C2535: 'CTaskManager::CTaskManager(void)': メンバー関数は、既に定義または宣言されています。
+C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CTaskManager.h(29): message : 'CTaskManager::CTaskManager' の宣言を確認してください
 C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CPlayer.cpp(8,1): warning C4005: 'VELOCITY': マクロが再定義されました。
 C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CCharacter.h(6): message : 'VELOCITY' の以前の定義を確認してください
   CPlayer2.cpp
+C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CTaskManager.h(32,14): error C2535: 'CTaskManager::CTaskManager(void)': メンバー関数は、既に定義または宣言されています。
+C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CTaskManager.h(29): message : 'CTaskManager::CTaskManager' の宣言を確認してください
 C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CPlayer2.cpp(12,1): warning C4005: 'VELOCITY': マクロが再定義されました。
 C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CCharacter.h(6): message : 'VELOCITY' の以前の定義を確認してください
+  CTaskManager.cpp
+C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CTaskManager.h(32,14): error C2535: 'CTaskManager::CTaskManager(void)': メンバー関数は、既に定義または宣言されています。
+C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CTaskManager.h(29): message : 'CTaskManager::CTaskManager' の宣言を確認してください
   main.cpp
+C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CTaskManager.h(32,14): error C2535: 'CTaskManager::CTaskManager(void)': メンバー関数は、既に定義または宣言されています。
+C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CTaskManager.h(29): message : 'CTaskManager::CTaskManager' の宣言を確認してください
   コードを生成中...
-  GameProgramming.vcxproj -> C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\Debug\GameProgramming.exe

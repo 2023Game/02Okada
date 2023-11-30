@@ -1,6 +1,9 @@
 #include "CCollider.h"
+#include"CCollisionManager.h"
+
 CCollider::CCollider(CCharacter3 * parent, CMatrix * matrix,
-	const CVector & position, float radius) {
+	const CVector & position, float radius) 
+{
 	//親設定
 	mpParent = parent;
 	//親行列設定
@@ -16,7 +19,8 @@ CCharacter3* CCollider::Parent()
 	return mpParent;
 }
 
-void CCollider::Render() {
+void CCollider::Render() 
+{
 	glPushMatrix();
 	//コライダの中心座標を計算
 	//自分の座標×親の変換行列を掛ける
@@ -30,3 +34,15 @@ void CCollider::Render() {
 	glutWireSphere(mRadius, 16, 16);
 	glPopMatrix();
 }
+
+
+CCollider::~CCollider()
+{
+    //コリジョンマネージャyに追加
+    CCollisionManager::Instance()->Add(this);
+	//コリジョンリストから削除
+	CCollisionManager::Instance()->Remove(this);
+
+}
+
+

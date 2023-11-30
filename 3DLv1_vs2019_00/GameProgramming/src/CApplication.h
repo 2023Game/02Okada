@@ -24,7 +24,6 @@ class CApplication
 private:
 	//C5モデル
 	CModel mModelC5;
-	static CTaskManager mTaskManager;
 	CPlayer mPlayer;
 	CModel mBackGround; //背景モデル
 	CSound mSoundBgm;	//BGM
@@ -53,7 +52,7 @@ private:
 	//CCharacterのポインタの可変長配列
 //	std::vector<CCharacter*> mCharacters;
 public:
-	static CTaskManager* TaskManager();
+	
 	static CCharacterManager* CharacterManager();
 	static CTexture* Texture();
 	//最初に一度だけ実行するプログラム
