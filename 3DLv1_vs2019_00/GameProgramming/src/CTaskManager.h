@@ -3,7 +3,6 @@
 //タスククラスのインクルード
 #include "CTask.h"
 
-
 /*
 タスクマネージャ
 タスクリストの管理
@@ -26,8 +25,6 @@ public:
 	void Update();
 	//描画
 	void Render();
-	//デフォルトコンストラクタ
-	CTaskManager();
 protected:
 	//デフォルトコンストラクタ
 	CTaskManager();
