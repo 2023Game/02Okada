@@ -121,6 +121,9 @@ void CApplication::Update()
 
 	mBackGround.Render();
 	CCollisionManager::Instance()->Render();
+	//コリジョンマネージャの衝突処理
+	CCollisionManager::Instance()->Collision();
+
 
 }
 

@@ -1,5 +1,6 @@
 #include "CEnemy.h"
 
+
 //移動速度
 #define VELOCITY CVector(0.0f, 0.0f, 0.09f)
 
@@ -26,4 +27,16 @@ void CEnemy::Update() {
 	CTransform::Update();
 	//位置を移動
 	mPosition = mPosition + VELOCITY * mMatrixRotate;
+}
+
+//衝突処理
+//Collision(コライダ1, コライダ2)
+void CEnemy::Collision(CCollider* m, CCollider* o) 
+{
+	//コライダのmとoが衝突しているか判定
+	if (CCollider::Collision(m, o)) 
+	{
+		//衝突している時は無効にする
+		mEnabled = false;
+	}
 }
