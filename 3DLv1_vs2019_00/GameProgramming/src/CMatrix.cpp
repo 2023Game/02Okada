@@ -169,7 +169,7 @@ float* CMatrix::M() const
 	return (float*)mM[0];
 }
 
-CMatrix CMatrix::Transpose()
+CMatrix CMatrix::Transpose() const 
 {
 	CMatrix tmp; //返却用のCMatrixインスタンスを作成
 
