@@ -16,12 +16,16 @@
 #include "CGame.h"
 #include "CSound.h"
 #include"CTaskManager.h"
+#include"CColliderTriangle.h"
 
 
 
 class CApplication
 {
 private:
+	CColliderTriangle mColliderTriangle2;
+	//三角コライダの作成
+	CColliderTriangle mColliderTriangle;
 	//モデルビューの逆行列
 	static CMatrix mModelViewInverse;
 	//C5モデル
