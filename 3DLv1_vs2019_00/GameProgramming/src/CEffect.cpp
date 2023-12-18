@@ -21,6 +21,7 @@ void CEffect::Update()
 	//コマ数の計算
 	int frame = mFrame++ / mFps;
 	frame %= (mRows * mCols); 
+	
 	//UV左
 	float left = 1.0f / mCols * (frame % mCols);
 	//UV右
@@ -29,17 +30,22 @@ void CEffect::Update()
 	float top = 1.0f - 1.0f / mRows * (frame / mCols);
 	//UV下
 	float bot = top - 1.0f / mRows;
+	
+    
 	//テクスチャマッピング
 	mT[0].UV(CVector(right, top, 0.0f), CVector(left, bot, 0.0f),
 		CVector(right, bot, 0.0f));
-	
 	mT[1].UV(CVector(left, top, 0.0f), CVector(left, bot, 0.0f),
 		CVector(right, top, 0.0f));
-	
+	 if (mFrame == (mRows * mCols) * mFps)
+	{
+       mEnabled = false;
+	}
+ 
 	//ビルボード更新
 	CBillBoard::Update();
 	
-	 mEnabled = false;
+    
 }
 
 void CEffect::Render()
