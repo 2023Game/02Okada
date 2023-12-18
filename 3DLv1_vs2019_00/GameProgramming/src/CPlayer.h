@@ -4,6 +4,7 @@
 #include "CCharacter3.h"
 #include "CInput.h"
 #include"CBullet.h"
+#include"CColliderLine.h"
 
 /*
 プレイヤークラス
@@ -18,6 +19,9 @@ public:
 	//更新処理
 	void Update();
 private:
+	CColliderLine mLine; //線分コライダ
+	CColliderLine mLine2;
+	CColliderLine mLine3;
 	CInput mInput;
 };
 
