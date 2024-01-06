@@ -2,6 +2,7 @@
 #include "CPlayer.h"
 #include"CTaskManager.h"
 #include"CApplication.h"
+#include"CCollider.h"
 
 
 

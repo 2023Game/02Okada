@@ -78,14 +78,14 @@ float CVector::Length() const
 
 	 CVector CVector::Cross(const CVector& v) const 
 	 {
-		 return mY * v.mZ - mZ * v.mY, mZ* v.mX - mX * v.mZ, mX* v.mY - mY * v.mX;
+		 return CVector(mY * v.mZ - mZ * v.mY, mZ* v.mX - mX * v.mZ, mX* v.mY - mY * v.mX);
 	 }
 
 	 CVector CVector::operator*(const float& f) const 
 	 {
-		 return mX * f, mY* f, mZ* f;
+		 return CVector(mX * f, mY* f, mZ* f);
 	 }
-
+	 
 
 
 

@@ -19,7 +19,8 @@ public:
 //調整値:衝突しない位置まで戻す値
 	static bool CollisionTriangleLine(CCollider* triangle, CCollider* line, CVector* adjust);
 	//コライダタイプ
-	enum class EType {
+	enum class EType 
+	{
 		ESPHERE,//球コライダ
 		ETRIANGLE,//三角コライダ
 		ELINE, //線分コライダ
@@ -39,8 +40,9 @@ public:
 	CCharacter3* Parent();
 	//描画
 	void Render();
+    EType Type();
 protected:
-	EType Type();
+	
 	EType mType;//コライダタイプ
 	//頂点
 	CVector mV[3];
