@@ -11,6 +11,7 @@
 */
 class CModel {
 public:
+	const std::vector<CTriangle>& Triangles() const;
 	//•`‰æ
 	//Render(s—ñ)
 	void Render(const CMatrix& m);

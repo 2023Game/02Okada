@@ -5,6 +5,7 @@
 
 
 
+
 //標準入出力のインクルード
 #include <stdio.h>
 //モデルファイルの入力
@@ -292,5 +293,11 @@ void CModel::CreateVertexBuffer()
 		}
 	}
 }
+
+const std::vector<CTriangle>& CModel::Triangles() const
+{
+	return mTriangles;
+}
+
 
 
