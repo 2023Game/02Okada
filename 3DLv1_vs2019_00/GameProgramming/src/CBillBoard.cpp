@@ -60,3 +60,10 @@ void CBillBoard::Render(CMaterial* mpMaterial)
 	//çsóÒÇñﬂÇ∑
 	glPopMatrix();
 }
+
+CBillBoard::CBillBoard(CVector pos, float w, float h, int priority)
+	: CCharacter3(priority)
+{
+	Set(pos, w, h);
+}
+
