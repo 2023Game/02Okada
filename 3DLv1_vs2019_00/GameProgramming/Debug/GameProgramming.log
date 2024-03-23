@@ -1,1 +1,21 @@
-﻿  GameProgramming.vcxproj -> C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\Debug\GameProgramming.exe
+﻿  CApplication.cpp
+  CBullet.cpp
+  CCollider.cpp
+  CColliderTriangle.cpp
+  CCollisionManager.cpp
+C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CCollisionManager.h(15,17): error C2061: 構文エラー: 識別子 'CCollider'
+C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CCollisionManager.h(15,41): error C2535: 'void CCollisionManager::Collision(void)': メンバー関数は、既に定義または宣言されています。
+C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CCollisionManager.h(14): message : 'CCollisionManager::Collision' の宣言を確認してください
+C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CCollisionManager.cpp(17,1): error C2084: 関数 'void CCollisionManager::Collision(void)' は既に本体を持っています。
+C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CCollisionManager.h(14): message : 'Collision' の以前の定義を確認してください
+C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CCollisionManager.cpp(45,1): error C2511: 'void CCollisionManager::Collision(CCollider *,int)': オーバーロードされたメンバー関数が 'CCollisionManager' にありません。
+C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CCollider.h(10): message : 'CCollisionManager' の宣言を確認してください
+  CEnemy.cpp
+  CPlayer.cpp
+C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CPlayer.cpp(11,1): warning C4005: 'VELOCITY': マクロが再定義されました。
+C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CCharacter.h(6): message : 'VELOCITY' の以前の定義を確認してください
+  CTaskManager.cpp
+C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CTaskManager.cpp(103,1): error C2084: 関数 'void CTaskManager::Collision(void)' は既に本体を持っています。
+C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CTaskManager.h(13): message : 'Collision' の以前の定義を確認してください
+  main.cpp
+  コードを生成中...

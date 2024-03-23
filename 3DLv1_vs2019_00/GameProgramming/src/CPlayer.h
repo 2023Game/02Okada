@@ -13,6 +13,8 @@
 class CPlayer : public CCharacter3 {
 public:
 	//衝突処理
+	virtual void Collision() {}
+	//衝突処理
 	void Collision(CCollider* m, CCollider* o);
 	CPlayer();
 	//CPlayer(位置, 回転, スケール)

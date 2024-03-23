@@ -1,5 +1,6 @@
 #include "CEnemy.h"
 #include"CEffect.h"
+#include"CCollisionManager.h"
 
 
 //移動速度
@@ -55,4 +56,17 @@ void CEnemy::Collision(CCollider* m, CCollider* o)
 		}
 		break;
 	}
+}
+
+//衝突処理
+void CEnemy::Collision()
+{
+	//コライダの優先度変更
+	mCollider1.ChangePriority();
+	mCollider2.ChangePriority();
+	mCollider3.ChangePriority();
+	//衝突処理を実行
+	CCollisionManager::Instance()->Collision(&mCollider1, COLLISIONRANGE);
+	CCollisionManager::Instance()->Collision(&mCollider2, COLLISIONRANGE);
+	CCollisionManager::Instance()->Collision(&mCollider3, COLLISIONRANGE);
 }

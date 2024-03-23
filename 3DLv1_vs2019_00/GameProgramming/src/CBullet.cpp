@@ -1,5 +1,7 @@
 #include "CBullet.h"
 #include"CEnemy.h"
+#include"CCollisionManager.h"
+
 
 
 
@@ -61,4 +63,18 @@ void CBullet::Collision(CCollider* m, CCollider* o)
 		mEnabled = false;
 	}
 }
+
+//衝突処理
+void CBullet::Collision()
+{
+	//コライダの優先度変更
+	mCollider.ChangePriority();
+	//mLine2.ChangePriority();
+	//mLine3.ChangePriority();
+	//衝突処理を実行
+	CCollisionManager::Instance()->Collision(&mCollider, COLLISIONRANGE);
+	//CCollisionManager::Instance()->Collision(&mLine2, COLLISIONRANGE);
+	//CCollisionManager::Instance()->Collision(&mLine3, COLLISIONRANGE);
+}
+
 
