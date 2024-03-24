@@ -10,7 +10,7 @@
 class CTaskManager {
 public:
 	//衝突処理
-	virtual void Collision(){}
+	virtual void Collision();
 	//インスタンスの取得
 	static CTaskManager* Instance();
 	//タスクの削除

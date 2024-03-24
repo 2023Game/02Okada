@@ -98,6 +98,13 @@ void CPlayer::Collision(CCollider* m, CCollider* o)
 		}
 		break;
 	}
+	
+}
+
+
+// 衝突処理
+void CPlayer::Collision()
+{
 	//コライダの優先度変更
 	mLine.ChangePriority();
 	mLine2.ChangePriority();
@@ -107,11 +114,5 @@ void CPlayer::Collision(CCollider* m, CCollider* o)
 	CCollisionManager::Instance()->Collision(&mLine2, COLLISIONRANGE);
 	CCollisionManager::Instance()->Collision(&mLine3, COLLISIONRANGE);
 }
-
-
-// 衝突処理
-//void CPlayer::Collision()
-//{
-	
 //
 
