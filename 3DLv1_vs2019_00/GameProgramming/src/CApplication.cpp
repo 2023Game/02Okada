@@ -64,6 +64,8 @@ void CApplication::Start()
 	//親インスタンスと親行列はなし
 	mColliderMesh.Set(nullptr, nullptr, &mBackGround);
 
+	spUi = new CUi();	//UIクラスの生成
+
 }
 
 void CApplication::Update()
@@ -128,19 +130,19 @@ void CApplication::Update()
 	mModelViewInverse.M(0, 3, 0);
 	mModelViewInverse.M(1, 3, 0);
 	mModelViewInverse.M(2, 3, 0);
-	
+	mBackGround.Render();
 	//タスクリストの削除
 	CTaskManager::Instance()->Delete();
 	//タスクマネージャの描画
 	CTaskManager::Instance()->Render();
 
 
-	mBackGround.Render();
+	
 	CCollisionManager::Instance()->Render();
 	//コリジョンマネージャの衝突処理
-	CCollisionManager::Instance()->Collision();
 	CTaskManager::Instance()->Collision();
 
+	spUi->Render();	//UIの描画
 
 }
 
@@ -149,6 +151,18 @@ CMatrix CApplication::mModelViewInverse;
 const CMatrix& CApplication::ModelViewInverse()
 {
 	return mModelViewInverse;
+}
+
+CUi* CApplication::spUi = nullptr;
+
+CUi* CApplication::Ui()
+{
+	return spUi;	//インスタンスのポインタを返す
+}
+
+CApplication::~CApplication()
+{
+	delete spUi;	//インスタンスUiの削除
 }
 
 
