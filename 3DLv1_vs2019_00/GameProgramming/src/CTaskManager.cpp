@@ -55,7 +55,7 @@ void CTaskManager::Render()
 		//•`‰æˆ—‚ðŒÄ‚Ô
 		task->Render();
 		//ŽŸ‚Ö
-		task = task->mpPrev;
+ 		task = task->mpPrev;
 	}
 }
 
