@@ -12,6 +12,9 @@
 */
 class CPlayer : public CCharacter3 {
 public:
+	
+	//インスタンスのポインタの取得
+	static CPlayer* Instance();
 	//衝突処理
 	virtual void Collision();
 	//衝突処理
@@ -23,6 +26,9 @@ public:
 	//更新処理
 	void Update();
 private:
+
+	//プレイヤーのインスタンス
+	static CPlayer* spInstance;
 	CColliderLine mLine; //線分コライダ
 	CColliderLine mLine2;
 	CColliderLine mLine3;

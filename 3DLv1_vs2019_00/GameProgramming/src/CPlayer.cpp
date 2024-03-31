@@ -106,6 +106,11 @@ void CPlayer::Collision(CCollider* m, CCollider* o)
 }
 
 
+CPlayer* CPlayer::Instance()
+{
+	return nullptr;
+}
+
 // 衝突処理
 void CPlayer::Collision()
 {
@@ -118,5 +123,11 @@ void CPlayer::Collision()
 	CCollisionManager::Instance()->Collision(&mLine2, COLLISIONRANGE);
 	CCollisionManager::Instance()->Collision(&mLine3, COLLISIONRANGE);
 }
-//
+
+CPlayer* CPlayer::spInstance = nullptr;
+{
+	//インスタンスの設定
+	spInstance = this;
+}
+
 
