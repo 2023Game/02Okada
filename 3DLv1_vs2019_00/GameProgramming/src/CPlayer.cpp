@@ -113,7 +113,7 @@ void CPlayer::Collision(CCollider* m, CCollider* o)
 
 CPlayer* CPlayer::Instance()
 {
-	return nullptr;
+	return spInstance;
 
 }
 
