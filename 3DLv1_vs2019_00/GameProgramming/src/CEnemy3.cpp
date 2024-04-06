@@ -6,6 +6,7 @@
 
 #define OBJ "res\\f16.obj"	//モデルのファイル
 #define MTL "res\\f16.mtl"	//モデルのマテリアルファイル
+#define HP 3	//耐久値
 
 CModel CEnemy3::sModel;	//モデルデータ作成
 
@@ -13,6 +14,7 @@ CModel CEnemy3::sModel;	//モデルデータ作成
 CEnemy3::CEnemy3()
 	: CCharacter3(1)
 	, mCollider(this, &mMatrix, CVector(0.0f, 0.0f, 0.0f), 0.4f)
+	, mHp(HP)
 {
 	//モデルが無いときは読み込む
 	if (sModel.Triangles().size() == 0)
@@ -72,6 +74,21 @@ void CEnemy3::Update()
 			}
 		}
 	}
+	//HPが0以下の時　撃破
+	if (mHp <= 0)
+	{
+		mHp--;
+		//15フレーム毎にエフェクト
+		if (mHp % 15 == 0)
+		{
+			//エフェクト生成
+			new CEffect(mPosition, 1.0f, 1.0f, "exp.tga", 4, 4, 2);
+		}
+		//下降させる
+		mPosition = mPosition - CVector(0.0f, 0.03f, 0.0f);
+		CTransform::Update();
+		return;
+	}
 }
 
 void CEnemy3::Collision(CCollider* m, CCollider* o)
@@ -81,7 +98,9 @@ void CEnemy3::Collision(CCollider* m, CCollider* o)
 	{
 	case CCollider::EType::ESPHERE: //球コライダの時
 		//コライダのmとyが衝突しているか判定
-		if (CCollider::Collision(m, o)) {
+		if (CCollider::Collision(m, o)) 
+		{
+			mHp--;	//ヒットポイントの減算
 			//エフェクト生成
 			new CEffect(o->Parent()->Position(), 1.0f, 1.0f, "exp.tga", 4, 4, 2);
 			//衝突している時は無効にする
@@ -92,7 +111,13 @@ void CEnemy3::Collision(CCollider* m, CCollider* o)
 		CVector adjust; //調整値
 		//三角コライダと球コライダの衝突判定
 		if (CCollider::CollisionTriangleSphere(o, m, &adjust))
-		{	//衝突しない位置まで戻す
+		{	
+			//撃破で地面に衝突すると無効
+			if (mHp <= 0)
+			{
+				mEnabled = false;
+			}
+			//衝突しない位置まで戻す
 			mPosition = mPosition + adjust;
 		}
 		break;
@@ -105,4 +130,5 @@ void CEnemy3::Collision()
 	mCollider.ChangePriority();
 	//衝突処理を実行
 	CCollisionManager::Instance()->Collision(&mCollider, COLLISIONRANGE);
+
 }
