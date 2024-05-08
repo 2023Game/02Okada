@@ -3,6 +3,7 @@
 #include"CModelX.h"
 #include"glut.h"
 #include <ctype.h>	//isspace関数の宣言
+#include"CMatrix.h"
 
 CModelX::CModelX()
     :mpPointer(nullptr)
@@ -213,16 +214,27 @@ CModelXFrame::CModelXFrame(CModelX* model)
                 mChild.push_back(
                     new CModelXFrame(model));
             }
-            else
+            else if (strcmp(model->mToken, "FrameTransformMatrix") == 0) 
+            {
+                model->GetToken(); // {
+                for (int i = 0; i < mTransformMatrix.Size(); i++) 
+                {
+                    mTransformMatrix.M()[i] = atof(model->GetToken());
+                }
+                model->GetToken(); // }
+            }
+            else 
             {
                 //上記以外の要素は読み飛ばす
                 model->SkipNode();
             }
+
         }
     }
         //デバッグバージョンのみ有効
 #ifdef _DEBUG
         printf("%s\n", mpName);
+        mTransformMatrix.Print();
 #endif
 }
 
