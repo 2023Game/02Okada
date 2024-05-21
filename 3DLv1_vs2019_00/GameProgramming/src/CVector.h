@@ -16,6 +16,9 @@ public:
 	//*演算子のオーバーロード
 	//CVector * float の演算結果を返す
 	CVector operator*(const float& f) const;
+	void X(float f);
+	void Y(float f);
+	void Z(float f);
 	//内積
 	//Dot(ベクトル)
 	float Dot(const CVector& v) const;

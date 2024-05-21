@@ -4,6 +4,8 @@
 #include"glut.h"
 #include <ctype.h>	//isspace関数の宣言
 #include"CMatrix.h"
+#include"CVector.h"
+#include "CMaterial.h"
 
 CModelX::CModelX()
     :mpPointer(nullptr)
@@ -105,6 +107,7 @@ char* CModelX::GetToken()
     return mToken;
 }
 
+
 /*
 * IsDelimiter(c)
 * cが\t \r \n スペースなどの空白文字
@@ -139,6 +142,11 @@ CModelXFrame::~CModelXFrame()
     }
     //名前のエリアを解放する
     SAFE_DELETE_ARRAY(mpName);
+
+    if (mpMesh != nullptr)
+    {
+        delete mpMesh;
+    }
 }
 
 CModelX::~CModelX()
@@ -174,6 +182,7 @@ void CModelX::SkipNode()
     }
 }
 
+
 /*
  CModelXFrame
  model：CModelXインスタンスへのポインタ
@@ -184,6 +193,7 @@ void CModelX::SkipNode()
 CModelXFrame::CModelXFrame(CModelX* model)
     : mpName(nullptr)
     , mIndex(0)
+    ,mpMesh(nullptr)
 {
     //現在のフレーム配列の要素数を取得し設定する
     mIndex = model->mFrame.size();
@@ -223,6 +233,11 @@ CModelXFrame::CModelXFrame(CModelX* model)
                 }
                 model->GetToken(); // }
             }
+            else if (strcmp(model->mToken, "Mesh") == 0) 
+            {
+                mpMesh = new CMesh();
+                mpMesh->Init(model);
+            }
             else 
             {
                 //上記以外の要素は読み飛ばす
@@ -235,8 +250,63 @@ CModelXFrame::CModelXFrame(CModelX* model)
 #ifdef _DEBUG
         printf("%s\n", mpName);
         mTransformMatrix.Print();
+       
 #endif
+
 }
+char* CModelX::Token()
+{
+    return mToken;
+}
+
+
+//コンストラクタ
+CMesh::CMesh()
+    : mVertexNum(0)
+    , mpVertex(nullptr)
+{}
+//デストラクタ
+CMesh::~CMesh() 
+{
+    SAFE_DELETE_ARRAY(mpVertex);
+}
+
+/*
+ Init
+ Meshのデータを取り込む
+*/
+void CMesh::Init(CModelX* model) 
+{
+    model->GetToken();	// { or 名前
+    if (!strchr(model->Token(), '{')) 
+    {
+        //名前の場合、次が{
+        model->GetToken();	// {
+    }
+
+    //頂点数の取得
+    mVertexNum = atoi(model->GetToken());
+    //頂点数分エリア確保
+    mpVertex = new CVector[mVertexNum];
+    //頂点数分データを取り込む
+    for (int i = 0; i < mVertexNum; i++)
+    {
+        mpVertex[i].X(atof(model->GetToken()));
+        mpVertex[i].Y(atof(model->GetToken()));
+        mpVertex[i].Z(atof(model->GetToken()));
+    }
+    printf("VertexNum:%d\n", mVertexNum);
+    for (int i = 0; i < mVertexNum; i++) 
+    {
+        printf("%10f", mpVertex[i].X());
+        printf("%10f", mpVertex[i].Y());
+        printf("%10f\n", mpVertex[i].Z());
+    }
+}
+
+
+
+
 
 
 

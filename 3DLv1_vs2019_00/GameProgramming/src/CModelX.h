@@ -5,6 +5,8 @@
 #include "CMatrix.h"	//マトリクスクラスのインクルード
 class CModelX;		// CModelXクラスの宣言
 class CModelXFrame;	// CModelXFrameクラスの宣言
+class CMesh;	// CMeshクラスの宣言
+
 
 #define MODEL_FILE "res\\sample.blend.x"
 
@@ -14,9 +16,11 @@ class CModelXFrame;	// CModelXFrameクラスの宣言
 * CModelX
 * Xファイル形式の3Dモデルデータをプログラムで認識する
 */
-class CModelX {
+class CModelX 
+{
 	friend CModelXFrame;
 public:
+	char* Token();
 	~CModelX();
 	//ノードの読み飛ばし
 	void SkipNode();
@@ -33,6 +37,8 @@ private:
 	char mToken[1024];  //取り出した単語の領域
 };
 #endif // !CMODELX_H
+
+
 class CModelXFrame 
 {
 
@@ -43,10 +49,26 @@ public:
 	//デストラクタ
 	~CModelXFrame();
 private:
+	CMesh* mpMesh;	//Meshデータ
 	std::vector<CModelXFrame*> mChild;  //子フレームの配列
 	CMatrix mTransformMatrix;  //変換行列
 	char* mpName;   //フレーム名前
 	int mIndex;  //フレーム番号
+};
+
+//CMeshクラスの定義
+class CMesh 
+{
+public:
+	//コンストラクタ
+	CMesh();
+	//デストラクタ
+	~CMesh();
+	//読み込み処理
+	void Init(CModelX* model);
+private:
+	int mVertexNum;	//頂点数
+	CVector* mpVertex;	//頂点データ
 };
 
 
