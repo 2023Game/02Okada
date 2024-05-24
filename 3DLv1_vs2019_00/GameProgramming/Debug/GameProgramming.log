@@ -1,2 +1,6 @@
-﻿  CModelX.cpp
+﻿  CApplication.cpp
+  CBillBoard.cpp
+  CCharacter3.cpp
+  main.cpp
+  コードを生成中...
   GameProgramming.vcxproj -> C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\Debug\GameProgramming.exe
