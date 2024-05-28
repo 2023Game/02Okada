@@ -75,11 +75,11 @@ void CApplication::Update()
 	}
 	if (mInput.Key('I'))
 	{
-		mMatrix = mMatrix * CMatrix().RotateX(2);
+		mMatrix = mMatrix * CMatrix().RotateX(-1);
 	}
 	if (mInput.Key('J'))
 	{
-		mMatrix = mMatrix * CMatrix().RotateY(2);
+		mMatrix = mMatrix * CMatrix().RotateY(-1);
 	}
 	//行列設定
 	glMultMatrixf(mMatrix.M());
