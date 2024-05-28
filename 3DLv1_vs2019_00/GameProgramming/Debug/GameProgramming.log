@@ -1,6 +1,10 @@
 ﻿  CApplication.cpp
   CBillBoard.cpp
   CCharacter3.cpp
+  CModelX.cpp
+  CPlayer.cpp
+C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CPlayer.cpp(11,1): warning C4005: 'VELOCITY': マクロが再定義されました。
+C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CCharacter.h(6): message : 'VELOCITY' の以前の定義を確認してください
   main.cpp
   コードを生成中...
   GameProgramming.vcxproj -> C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\Debug\GameProgramming.exe
