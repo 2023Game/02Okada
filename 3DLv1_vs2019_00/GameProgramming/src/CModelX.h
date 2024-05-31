@@ -10,6 +10,7 @@ class CMesh;	// CMeshクラスの宣言
 class CMaterial;	//マテリアルの宣言
 class CSkinWeights;	//スキンウェイトクラス
 class CAnimationSet; //アニメーションセットクラス
+class CAnimation; //アニメーションクラス
 
 
 
@@ -26,7 +27,11 @@ class CModelX
 {
 	friend CAnimationSet;
 	friend CModelXFrame;
+	friend CAnimation;
+
 public:
+	//フレーム名に該当するフレームのアドレスを返す
+	CModelXFrame* FindFrame(char* name);
 	bool EOT(); // トークンが無くなったらtrue
 	void Render();
 	char* Token();
@@ -53,6 +58,8 @@ private:
 class CModelXFrame 
 {
 	friend CModelX;
+	friend CAnimation;
+
  public:
 	void Render();
 
@@ -61,6 +68,10 @@ class CModelXFrame
 	//デストラクタ
 	~CModelXFrame();
 private:
+	int CModelXFrame::Index()
+	{
+		return mIndex;
+	}
 	CMesh* mpMesh;	//Meshデータ
 	std::vector<CModelXFrame*> mChild;  //子フレームの配列
 	CMatrix mTransformMatrix;  //変換行列
@@ -128,8 +139,28 @@ public:
 	CAnimationSet(CModelX* model);
 	~CAnimationSet();
 private:
+	//アニメーション
+	std::vector<CAnimation*> mAnimation;
 	//アニメーションセット名
 	char* mpName;
 };
+
+/*
+ CAnimation
+ アニメーションクラス
+*/
+class CAnimation 
+{
+	friend CAnimationSet;
+public:
+	CAnimation(CModelX* model);
+	~CAnimation();
+private:
+	
+
+	char* mpFrameName;//フレーム名
+	int mFrameIndex;	//フレーム番号
+};
+
 
 #endif // !CMODELX_H
