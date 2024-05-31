@@ -50,6 +50,9 @@ public:
 	//単位行列の作成
 	CMatrix Identity();
 private:
+
+	//テクスチャファイル名
+	char* mpTextureFilename;
 	//4×4の行列データを設定
 	float mM[4][4];
 };
