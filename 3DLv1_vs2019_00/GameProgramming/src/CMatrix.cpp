@@ -239,7 +239,7 @@ CMatrix CMatrix::Quaternion(float x, float y, float z, float w)
 	return *this;
 }
 
-CMatrix CMatrix::operator*(const float& x) const
+CMatrix CMatrix::operator*(const float& x) const 
 {
 	CMatrix tmp;
 	for (int i = 0; i < 4; ++i)

@@ -1,7 +1,6 @@
 ﻿  CApplication.cpp
   CBillBoard.cpp
   CBullet.cpp
-  CCamera.cpp
   CCharacter3.cpp
   CCollider.cpp
   CColliderLine.cpp
@@ -11,60 +10,25 @@
   CEffect.cpp
   CEnemy.cpp
   CEnemy3.cpp
-  CFont.cpp
   CMaterial.cpp
   CMatrix.cpp
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CMatrix.cpp(243,1): error C2511: 'CMatrix CMatrix::operator *(const float &) const': オーバーロードされたメンバー関数が 'CMatrix' にありません。
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CMatrix.h(8): message : 'CMatrix' の宣言を確認してください
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CMatrix.cpp(249,23): error C2597: 静的でないメンバー 'CMatrix::mM' への参照が正しくありません。
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CMatrix.cpp(249,23): error C3867: 'CMatrix::mM': 非標準の構文です。メンバーにポインタを作成するには '&' を使用してください
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CMatrix.cpp(249,23): error C2109: 配列または、ポインターでない変数に添字が使われました。
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CMatrix.cpp(255,18): error C2039: '+': 'CMatrix' のメンバーではありません
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CMatrix.h(8): message : 'CMatrix' の宣言を確認してください
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CMatrix.cpp(256,1): error C2270: '+': メンバーでない関数が、メモリ モデル修飾子を伴って宣言されています。
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CMatrix.cpp(262,7): error C2248: 'CMatrix::mM': private メンバー (クラス 'CMatrix' で宣言されている) にアクセスできません。
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CMatrix.h(59): message : 'CMatrix::mM' の宣言を確認してください
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CMatrix.h(8): message : 'CMatrix' の宣言を確認してください
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CMatrix.cpp(262,19): error C2065: 'mM': 定義されていない識別子です。
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CMatrix.cpp(262,31): error C2248: 'CMatrix::mM': private メンバー (クラス 'CMatrix' で宣言されている) にアクセスできません。
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CMatrix.h(59): message : 'CMatrix::mM' の宣言を確認してください
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CMatrix.h(8): message : 'CMatrix' の宣言を確認してください
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CMatrix.cpp(267,15): error C2039: '+=': 'CMatrix' のメンバーではありません
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CMatrix.h(8): message : 'CMatrix' の宣言を確認してください
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CMatrix.cpp(273,4): error C2065: 'mM': 定義されていない識別子です。
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CMatrix.cpp(273,17): error C2248: 'CMatrix::mM': private メンバー (クラス 'CMatrix' で宣言されている) にアクセスできません。
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CMatrix.h(59): message : 'CMatrix::mM' の宣言を確認してください
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CMatrix.h(8): message : 'CMatrix' の宣言を確認してください
   CModel.cpp
 C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CModel.cpp(210,20): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
 C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CModel.cpp(222,20): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
 C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CModel.cpp(276,20): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
 C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CModel.cpp(278,21): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
   CModelX.cpp
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CModelX.cpp(776,77): error C2679: 二項演算子 '*': 型 'float' の右オペランドを扱う演算子が見つかりません (または変換できません)。
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CMatrix.h(24,16): message : 'const CMatrix CMatrix::operator *(const CMatrix &) const' の可能性があります
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CModelX.cpp(776,77): message : 引数リスト '(CMatrix, float)' を一致させようとしているとき
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CModelX.cpp(781,98): error C2679: 二項演算子 '*': 型 'float' の右オペランドを扱う演算子が見つかりません (または変換できません)。
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CMatrix.h(24,16): message : 'const CMatrix CMatrix::operator *(const CMatrix &) const' の可能性があります
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CModelX.cpp(781,98): message : 引数リスト '(CMatrix, float)' を一致させようとしているとき
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CModelX.cpp(797,62): error C2679: 二項演算子 '*': 型 'float' の右オペランドを扱う演算子が見つかりません (または変換できません)。
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CMatrix.h(24,16): message : 'const CMatrix CMatrix::operator *(const CMatrix &) const' の可能性があります
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CModelX.cpp(797,62): message : 引数リスト '(CMatrix, float)' を一致させようとしているとき
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CModelX.cpp(798,66): error C2679: 二項演算子 '*': 型 'float' の右オペランドを扱う演算子が見つかりません (または変換できません)。
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CMatrix.h(24,16): message : 'const CMatrix CMatrix::operator *(const CMatrix &) const' の可能性があります
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CModelX.cpp(798,66): message : 引数リスト '(CMatrix, float)' を一致させようとしているとき
   CPlayer.cpp
 C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CPlayer.cpp(11,1): warning C4005: 'VELOCITY': マクロが再定義されました。
 C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CCharacter.h(6): message : 'VELOCITY' の以前の定義を確認してください
   CSound.cpp
-  コードを生成中...
-  コンパイル中...
-  CTaskManager.cpp
-  CTexture.cpp
-  CInput.cpp
   CTransform.cpp
   CTriangle.cpp
-  CUi.cpp
+  コードを生成中...
+  コンパイル中...
   CVector.cpp
   main.cpp
   コードを生成中...
+LINK : warning LNK4098: defaultlib 'MSVCRT' は他のライブラリの使用と競合しています。/NODEFAULTLIB:library を使用してください。
+LINK : warning LNK4098: defaultlib 'LIBCMT' は他のライブラリの使用と競合しています。/NODEFAULTLIB:library を使用してください。
+  GameProgramming.vcxproj -> C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\Debug\GameProgramming.exe
