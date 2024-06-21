@@ -33,6 +33,7 @@ class CModelX
 	friend CAnimation;
 
 public:
+	std::vector<CModelXFrame*>& Frames();
 	void AnimateFrame();
 	//フレーム名に該当するフレームのアドレスを返す
 	CModelXFrame* FindFrame(char* name);
@@ -66,6 +67,8 @@ class CModelXFrame
 	friend CAnimation;
 	friend CAnimationSet;
  public:
+	 //合成行列の作成
+	 void AnimateCombined(CMatrix* parent);
 	void Render();
 
 	//コンストラクタ
@@ -73,6 +76,7 @@ class CModelXFrame
 	//デストラクタ
 	~CModelXFrame();
 private:
+	CMatrix mCombinedMatrix;	//合成行列
 	int CModelXFrame::Index()
 	{
 		return mIndex;
