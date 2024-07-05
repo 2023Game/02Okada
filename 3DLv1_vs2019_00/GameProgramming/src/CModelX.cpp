@@ -567,8 +567,7 @@ CAnimationSet::~CAnimationSet()
         delete mAnimation[i];
         
     }
-   //I—¹ŽžŠÔÝ’è
-    mMaxTime = mAnimation[0]->mpKey[mAnimation[0]->mKeyNum - 1].mTime;
+ 
 
 }
 
@@ -598,6 +597,8 @@ CAnimationSet::CAnimationSet(CModelX* model)
 
         }
     }
+    //I—¹ŽžŠÔÝ’è
+    mMaxTime = mAnimation[0]->mpKey[mAnimation[0]->mKeyNum - 1].mTime;
 #ifdef _DEBUG
     printf("AnimationSet:%s\n", mpName);
 #endif
