@@ -103,6 +103,12 @@ float CVector::Length() const
 	 }
 
 
+	 void CVector::operator+=(const CVector& v)
+	 {
+		 mX += v.mX;
+		 mY += v.mY;
+		 mZ += v.mZ;
+	 }
 
 
 

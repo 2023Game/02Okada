@@ -21,6 +21,8 @@ C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgr
   CPlayer.cpp
 C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CPlayer.cpp(11,1): warning C4005: 'VELOCITY': マクロが再定義されました。
 C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CCharacter.h(6): message : 'VELOCITY' の以前の定義を確認してください
-  main.cpp
+  CTransform.cpp
+  CTriangle.cpp
+  CVector.cpp
   コードを生成中...
-  GameProgramming.vcxproj -> C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\Debug\GameProgramming.exe
+C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CEffect.cpp : fatal error C1090: PDB API の呼び出しに失敗しました。エラー コード '3': C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\Debug\vc142.pdb
