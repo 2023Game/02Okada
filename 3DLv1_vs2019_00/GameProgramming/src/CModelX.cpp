@@ -24,7 +24,7 @@ void CModelX::Load(char* file)
     if (fp == NULL) 
     {   
         //エラーチェック　　
-        printf("fopen error:%s\n", file);
+        //printf("fopen error:%s\n", file);
         return;
     }
    
@@ -280,7 +280,7 @@ CModelXFrame::CModelXFrame(CModelX* model)
     }
         //デバッグバージョンのみ有効
 #ifdef _DEBUG
-        printf("%s\n", mpName);
+        //printf("%s\n", mpName);
         mTransformMatrix.Print();
        
 #endif
@@ -306,7 +306,7 @@ CMesh::CMesh()
     , mpMaterialIndex(nullptr)
     , mpAnimateVertex(nullptr)
     , mpAnimateNormal(nullptr)
-
+    , mpTextureCoords(nullptr)
 {}
 //デストラクタ
 CMesh::~CMesh() 
@@ -317,6 +317,8 @@ CMesh::~CMesh()
     SAFE_DELETE_ARRAY(mpMaterialIndex);
     SAFE_DELETE_ARRAY(mpAnimateVertex);
     SAFE_DELETE_ARRAY(mpAnimateNormal);
+    SAFE_DELETE_ARRAY(mpTextureCoords);
+
 
     //スキンウェイトの削除
     for (size_t i = 0; i < mSkinWeights.size(); i++)
@@ -448,6 +450,21 @@ void CMesh::Init(CModelX* model)
             //CSkinWeightsクラスのインスタンスを作成し、配列に追加
             mSkinWeights.push_back(new CSkinWeights(model));
         }
+        //テクスチャ座標の時
+        else if (strcmp(model->Token(), "MeshTextureCoords") == 0) 
+        {
+            model->GetToken();	// {
+            //テクスチャ座標数を取得
+            int textureCoordsNum = atoi(model->GetToken()) * 2;
+            //テクスチャ座標のデータを配列に取り込む
+            mpTextureCoords = new float[textureCoordsNum];
+            for (int i = 0; i < textureCoordsNum; i++) 
+            {
+                mpTextureCoords[i] = atof(model->GetToken());
+            }
+            model->GetToken();	// }
+        }
+
         else 
         {
             //以外のノードは読み飛ばし
@@ -455,7 +472,7 @@ void CMesh::Init(CModelX* model)
         }
 
     }
-    printf("NormalNum:%d\n", mNormalNum);
+    //printf("NormalNum:%d\n", mNormalNum);
     for (int i = 0; i < mNormalNum; i++)
     {
         printf("%10f", mpNormal[i].X());
@@ -475,10 +492,15 @@ void CMesh::Render()
     /* 頂点データ，法線データの配列を有効にする */
     glEnableClientState(GL_VERTEX_ARRAY);
     glEnableClientState(GL_NORMAL_ARRAY);
+    //テクスチャマッピングの配列を有効にする
+    glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+
 
     /* 頂点データ，法線データの場所を指定する */
     glVertexPointer(3, GL_FLOAT, 0, mpAnimateVertex);
     glNormalPointer(GL_FLOAT, 0, mpAnimateNormal);
+    glTexCoordPointer(2, GL_FLOAT, 0, mpTextureCoords);
+
 
     /* 頂点のインデックスの場所を指定して図形を描画する */
     for (int i = 0; i < mFaceNum; i++)
@@ -486,6 +508,7 @@ void CMesh::Render()
         //マテリアルを適用する
         mMaterial[mpMaterialIndex[i]]->Enabled();
         glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, (mpVertexIndex + i * 3));
+        mMaterial[mpMaterialIndex[i]]->Disabled();
 
     }
     /* 頂点データ，法線データの配列を無効にする */
@@ -576,7 +599,7 @@ CSkinWeights::CSkinWeights(CModelX* model)
     }
     model->GetToken();	// }
 #ifdef _DEBUG
-    printf("SkinWeights %s\n", mpFrameName);
+    //printf("SkinWeights %s\n", mpFrameName);
     for (int i = 0; i < mIndexNum; i++) {
         printf("%3d %10f\n", mpIndex[i], mpWeight[i]);
     }
@@ -627,7 +650,7 @@ CAnimationSet::CAnimationSet(CModelX* model)
     //終了時間設定
     mMaxTime = mAnimation[0]->mpKey[mAnimation[0]->mKeyNum - 1].mTime;
 #ifdef _DEBUG
-    printf("AnimationSet:%s\n", mpName);
+    //printf("AnimationSet:%s\n", mpName);
 #endif
 }
 
@@ -792,7 +815,7 @@ CAnimation::CAnimation(CModelX* model)
     }
 
 #ifdef _DEBUG
-    printf("Animation:%s\n", mpFrameName);
+    //printf("Animation:%s\n", mpFrameName);
     mpKey[0].mMatrix.Print();
 #endif
 }
@@ -902,7 +925,7 @@ void CModelX::AnimateFrame()
 #ifdef _DEBUG
     for (size_t i = 0; i < mFrame.size(); i++)
     {
-        printf("Frame:%s\n", mFrame[i]->mpName);
+        //printf("Frame:%s\n", mFrame[i]->mpName);
         mFrame[i]->mTransformMatrix.Print();
     }
 #endif
@@ -922,7 +945,7 @@ void CModelXFrame::AnimateCombined(CMatrix* parent)
         mChild[i]->AnimateCombined(&mCombinedMatrix);
     }
 #ifdef _DEBUG
-    printf("Frame::%s\n", mpName);
+    //printf("Frame::%s\n", mpName);
     mCombinedMatrix.Print();
 #endif
 }
