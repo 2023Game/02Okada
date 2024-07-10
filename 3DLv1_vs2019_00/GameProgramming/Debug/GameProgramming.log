@@ -1,26 +1,2 @@
 ﻿  CApplication.cpp
-  CBillBoard.cpp
-  CBullet.cpp
-  CCharacter3.cpp
-  CCollider.cpp
-  CColliderLine.cpp
-  CColliderMesh.cpp
-  CColliderTriangle.cpp
-  CCollisionManager.cpp
-  CEffect.cpp
-  CEnemy.cpp
-  CEnemy3.cpp
-  CMaterial.cpp
-  CMatrix.cpp
-  CModel.cpp
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CModel.cpp(210,20): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CModel.cpp(222,20): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CModel.cpp(276,20): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CModel.cpp(278,21): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
-  CModelX.cpp
-  CPlayer.cpp
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CPlayer.cpp(11,1): warning C4005: 'VELOCITY': マクロが再定義されました。
-C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\GameProgramming\src\CCharacter.h(6): message : 'VELOCITY' の以前の定義を確認してください
-  main.cpp
-  コードを生成中...
   GameProgramming.vcxproj -> C:\Users\okama\OneDrive\デスクトップ\Git\02Okada\3DLv1_vs2019_00\Debug\GameProgramming.exe
