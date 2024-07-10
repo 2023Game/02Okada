@@ -54,10 +54,6 @@ void CApplication::Update()
 	}
 	//キャラクタークラスの更新
 	mCharacter.Update(CMatrix());
-	//歩くアニメーションに切り替える
-	mCharacter.ChangeAnimation(1, true, 60);
-	//キャラクタークラスの更新
-	mCharacter.Update(CMatrix());
 	//カメラのパラメータを作成する
 	CVector e, c, u;//視点、注視点、上方向
 	//視点を求める

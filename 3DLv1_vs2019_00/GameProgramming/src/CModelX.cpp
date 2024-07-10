@@ -280,8 +280,7 @@ CModelXFrame::CModelXFrame(CModelX* model)
     }
         //デバッグバージョンのみ有効
 #ifdef _DEBUG
-        //printf("%s\n", mpName);
-        mTransformMatrix.Print();
+       
        
 #endif
 
@@ -332,10 +331,10 @@ CMesh::~CMesh()
  Init
  Meshのデータを取り込む
 */
-void CMesh::Init(CModelX* model) 
+void CMesh::Init(CModelX* model)
 {
     model->GetToken();	// { or 名前
-    if (!strchr(model->Token(), '{')) 
+    if (!strchr(model->Token(), '{'))
     {
         //名前の場合、次が{
         model->GetToken();	// {
@@ -366,7 +365,7 @@ void CMesh::Init(CModelX* model)
     }
 
     //単語がある間繰り返し
-    while (!model->EOT()) 
+    while (!model->EOT())
     {
         model->GetToken();	//MeshNormals
         //}かっこの場合は終了
@@ -374,14 +373,14 @@ void CMesh::Init(CModelX* model)
 
             break;
 
-        if (strcmp(model->Token(), "MeshNormals") == 0) 
+        if (strcmp(model->Token(), "MeshNormals") == 0)
         {
             model->GetToken();	// {
             //法線データ数を取得
             mNormalNum = atoi(model->GetToken());
             //法線のデータを配列に取り込む
             CVector* pNormal = new CVector[mNormalNum];
-            for (int i = 0; i < mNormalNum; i++) 
+            for (int i = 0; i < mNormalNum; i++)
             {
                 pNormal[i].X(atof(model->GetToken()));
                 pNormal[i].Y(atof(model->GetToken()));
@@ -395,7 +394,7 @@ void CMesh::Init(CModelX* model)
             mpAnimateNormal = new CVector[mNormalNum];
 
 
-            for (int i = 0; i < mNormalNum; i += 3) 
+            for (int i = 0; i < mNormalNum; i += 3)
             {
                 model->GetToken(); // 3
                 ni = atoi(model->GetToken());
@@ -411,7 +410,7 @@ void CMesh::Init(CModelX* model)
             model->GetToken();	// }
         } // End of MeshNormals
         // MeshMaterialListのとき
-        else if (strcmp(model->Token(), "MeshMaterialList") == 0) 
+        else if (strcmp(model->Token(), "MeshMaterialList") == 0)
         {
             model->GetToken(); // {
             // Materialの数
@@ -420,19 +419,19 @@ void CMesh::Init(CModelX* model)
             mMaterialIndexNum = atoi(model->GetToken());
             //マテリアルインデックスの作成
             mpMaterialIndex = new int[mMaterialIndexNum];
-            for (int i = 0; i < mMaterialIndexNum; i++) 
+            for (int i = 0; i < mMaterialIndexNum; i++)
             {
                 mpMaterialIndex[i] = atoi(model->GetToken());
             }
             //マテリアルデータの作成
-            for (int i = 0; i < mMaterialNum; i++) 
+            for (int i = 0; i < mMaterialNum; i++)
             {
                 model->GetToken();	// Material
-                if (strcmp(model->Token(), "Material") == 0) 
+                if (strcmp(model->Token(), "Material") == 0)
                 {
                     mMaterial.push_back(new CMaterial(model));
                 }
-                else 
+                else
                 {
                     // {  既出
                     model->GetToken();	//MaterialName
@@ -445,42 +444,33 @@ void CMesh::Init(CModelX* model)
             model->GetToken();	// } //End of MeshMaterialList
         } //End of MeshMaterialList
         //SkinWeightsのとき
-        else if (strcmp(model->Token(), "SkinWeights") == 0) 
+        else if (strcmp(model->Token(), "SkinWeights") == 0)
         {
             //CSkinWeightsクラスのインスタンスを作成し、配列に追加
             mSkinWeights.push_back(new CSkinWeights(model));
         }
         //テクスチャ座標の時
-        else if (strcmp(model->Token(), "MeshTextureCoords") == 0) 
+        else if (strcmp(model->Token(), "MeshTextureCoords") == 0)
         {
             model->GetToken();	// {
             //テクスチャ座標数を取得
             int textureCoordsNum = atoi(model->GetToken()) * 2;
             //テクスチャ座標のデータを配列に取り込む
             mpTextureCoords = new float[textureCoordsNum];
-            for (int i = 0; i < textureCoordsNum; i++) 
+            for (int i = 0; i < textureCoordsNum; i++)
             {
                 mpTextureCoords[i] = atof(model->GetToken());
             }
             model->GetToken();	// }
         }
 
-        else 
+        else
         {
             //以外のノードは読み飛ばし
             model->SkipNode();
         }
 
     }
-    //printf("NormalNum:%d\n", mNormalNum);
-    for (int i = 0; i < mNormalNum; i++)
-    {
-        printf("%10f", mpNormal[i].X());
-        printf("%10f", mpNormal[i].Y());
-        printf("%10f\n", mpNormal[i].Z());
-    }
-
-
 }
 
 /*
@@ -598,13 +588,7 @@ CSkinWeights::CSkinWeights(CModelX* model)
         mOffset.M()[i] = atof(model->GetToken());
     }
     model->GetToken();	// }
-#ifdef _DEBUG
-    //printf("SkinWeights %s\n", mpFrameName);
-    for (int i = 0; i < mIndexNum; i++) {
-        printf("%3d %10f\n", mpIndex[i], mpWeight[i]);
-    }
-    mOffset.Print();
-#endif
+
 }
 
 
@@ -650,7 +634,7 @@ CAnimationSet::CAnimationSet(CModelX* model)
     //終了時間設定
     mMaxTime = mAnimation[0]->mpKey[mAnimation[0]->mKeyNum - 1].mTime;
 #ifdef _DEBUG
-    //printf("AnimationSet:%s\n", mpName);
+  
 #endif
 }
 
@@ -815,8 +799,7 @@ CAnimation::CAnimation(CModelX* model)
     }
 
 #ifdef _DEBUG
-    //printf("Animation:%s\n", mpFrameName);
-    mpKey[0].mMatrix.Print();
+ 
 #endif
 }
 
@@ -923,11 +906,7 @@ void CModelX::AnimateFrame()
         animSet->AnimateMatrix(this);
     }
 #ifdef _DEBUG
-    for (size_t i = 0; i < mFrame.size(); i++)
-    {
-        //printf("Frame:%s\n", mFrame[i]->mpName);
-        mFrame[i]->mTransformMatrix.Print();
-    }
+
 #endif
 }
 
@@ -946,7 +925,7 @@ void CModelXFrame::AnimateCombined(CMatrix* parent)
     }
 #ifdef _DEBUG
     //printf("Frame::%s\n", mpName);
-    mCombinedMatrix.Print();
+   // mCombinedMatrix.Print();
 #endif
 }
 
