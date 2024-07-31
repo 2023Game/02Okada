@@ -20,6 +20,7 @@
 #include"CColliderMesh.h"
 #include"CModelX.h"
 #include"CXCharacter.h"
+#include"CXPlayer.h"
 
 
 
@@ -27,7 +28,7 @@ class CApplication
 {
 private:
 	//キャラクタのインスタンス
-	CXCharacter mCharacter;
+	CXPlayer mXPlayer;
 	CMatrix mMatrix;
 	CModelX mModelX;
 	static CUi* spUi;	//UIクラスのポインタ
