@@ -33,6 +33,7 @@ class CModelX
 	friend CAnimation;
 
 public:
+	void AnimateVertex(CMatrix*);
 	//マテリアル配列の取得
 	std::vector<CMaterial*>& Material();
 	//マテリアルの検索
@@ -103,6 +104,7 @@ private:
 class CMesh
 {
 public:
+	void AnimateVertex(CMatrix*);
 	//頂点にアニメーション適用
 	void AnimateVertex(CModelX* model);
 	//スキンウェイトにフレーム番号を設定する
