@@ -55,7 +55,9 @@ protected:
 	CVector mV[3];
 	CCharacter3* mpParent;//e
 	CMatrix* mpMatrix;//es—ñ
-	float mRadius;	//”¼Œa
+	float mRadius;
+	void Matrix(CMatrix* m);
+	//”¼Œa
 };
 #endif
 
